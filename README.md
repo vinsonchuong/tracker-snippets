@@ -3,8 +3,9 @@ Code snippets you can run from your console
 
 ## Listing all of the stories owned by a particular user
 ```js
+var personName = window.prompt('What is the full name of the person?');
 var project = tracker.Project.current();
-var person = project.members().findWhere({name: 'Vinson Chuong'});
+var person = project.members().findWhere({name: personName});
 var stories = project.stories().filter(function(story) {
   return story.get('owner_ids').indexOf(person.id) >= 0;
 });
